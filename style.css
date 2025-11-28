@@ -1,0 +1,463 @@
+:root {
+  /* Softer gold–peach background */
+  --bg1: linear-gradient(135deg, #fff7e8, #ffeccb, #fffdf7);
+
+  /* Softer translucent card backgrounds */
+  --card-bg: rgba(255, 255, 255, 0.40);
+  --glass: rgba(255, 255, 255, 0.32);
+
+  /* Slightly lighter primary accent */
+  --accent: #8b6aff;
+
+  /* Softer danger red */
+  --danger: #ff7c7c;
+}
+
+/* common */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background:
+      linear-gradient(to bottom right, rgba(255, 229, 236, 0.6), rgba(230, 240, 255, 0.6)),
+      url("eventimage.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+a {
+  color: #6a57ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #4a3aea;
+}
+
+/* auth pages */
+.auth-page {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.auth-card {
+  width: 360px;
+  background: var(--glass);
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(8px);
+  color: #222;
+}
+
+.auth-card h1 {
+  margin: 0 0 14px;
+  font-size: 24px;
+}
+
+.auth-card .label {
+  display: block;
+  font-size: 12px;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(160, 140, 255, 0.35);
+  transition: 0.25s;
+}
+
+.btn:hover {
+  background: #6b56e8;
+  box-shadow: 0 6px 18px rgba(171, 153, 255, 0.40);
+}
+
+.btn.small {
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.muted {
+  color: #444;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 28px;
+  background: transparent;
+  color: #222;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+/* dashboard layout */
+.dashboard-wrap {
+  max-width: 980px;
+  margin: 28px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(160, 140, 255, 0.2);
+  color: #222;
+}
+
+.add-panel input,
+.add-panel textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+  margin-bottom: 12px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-row input[type="date"],
+.form-row input[type="time"] {
+  flex: 1;
+}
+
+/* events list */
+.events-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.event-card {
+  background: rgba(255, 255, 255, 0.35);
+  padding: 14px;
+  border-radius: 10px;
+  color: #222;
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-header h4 {
+  margin: 0;
+}
+
+.event-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.20);
+  color: #444;
+}
+
+.btn.danger,
+.btn.small.danger {
+  background: var(--danger);
+  color: #fff;
+  border: none;
+}
+
+.empty {
+  color: #444;
+  padding: 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.20);
+  text-align: center;
+}
+
+/* small utilities */
+.full {
+  width: 100%;
+}
+
+.small {
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+/* LOGIN PAGE */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.75);
+  width: 360px;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(150,150,150,0.10);
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-bottom: 18px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
+#loginBtn {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#loginBtn:hover {
+  background: #6b56e8;
+}
+
+.signup-text {
+  margin-top: 14px;
+  font-size: 14px;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: rgba(30, 30, 30, 0.85);
+  color: white;
+}
+
+.navbar nav a {
+  margin-left: 24px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #ded3ff;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 88vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  background: linear-gradient(135deg, #faecff, #e7eeff);
+  overflow: hidden;
+}
+
+.hero-content {
+  animation: fadeUp 1.3s ease forwards;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #222;
+}
+
+.hero p {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #444;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 40px;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.25s;
+  box-shadow: 0 10px 25px rgba(140, 120, 255, 0.35);
+}
+
+.hero-btn:hover {
+  background: #6b56e8;
+  transform: translateY(-3px);
+}
+
+/* Floating shapes */
+.float {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.55;
+  animation: floatAnim 6s infinite ease-in-out;
+}
+
+.shape1 {
+  width: 160px;
+  height: 160px;
+  background: #ffb3e4;
+  top: 12%;
+  left: 18%;
+}
+
+.shape2 {
+  width: 200px;
+  height: 200px;
+  background: #bcbfff;
+  bottom: 10%;
+  right: 14%;
+  animation-delay: 1.2s;
+}
+
+.shape3 {
+  width: 120px;
+  height: 120px;
+  background: #ffe0ac;
+  bottom: 18%;
+  left: 12%;
+  animation-delay: 0.6s;
+}
+
+@keyframes floatAnim {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-35px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(35px); }
+  to { opacity: 1; transform: translateY(0px); }
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 14px;
+  background: #000;
+  color: white;
+  font-size: 14px;
+}
+
+/* ---------------- CREATE EVENT PAGE FIX ---------------- */
+
+body > a {
+  margin-left: 20px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 32px;
+  margin: 30px 20px 10px;
+  font-weight: 800;
+}
+
+form {
+  padding: 24px;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  width: fit-content;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+form input[type="text"],
+form input[type="date"],
+form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  font-size: 15px;
+  margin: 8px;
+  width: 220px;
+}
+
+textarea {
+  width: 260px;
+  height: 70px;
+}
+
+button,
+input[type="submit"] {
+  padding: 10px 16px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(140,120,255,0.35);
+  transition: 0.25s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background: #6b56e8;
+  transform: translateY(-2px);
+}
+
+body > p {
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}

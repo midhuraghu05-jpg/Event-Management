@@ -1,0 +1,140 @@
+/* ===== GENERAL PAGE BACKGROUND ===== */
+.create-page {
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* 🔥 ONLY CHANGE MADE — makes image subtle, not vibrant */
+.create-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35); /* dark overlay softness */
+    backdrop-filter: brightness(0.85); /* reduces vibrance */
+    z-index: -1;
+}
+
+/* ===== NAVBAR ===== */
+.topnav {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.50);
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.links a {
+    margin-left: 25px;
+    font-size: 17px;
+    text-decoration: none;
+    color: #fff;
+    transition: .3s;
+}
+
+.links a:hover,
+.links a.active {
+    color: #b4b6ff;
+}
+
+/* ===== CREATE FORM CONTAINER ===== */
+.create-container {
+    background: rgba(255, 255, 255, 0.88);
+    max-width: 850px;
+    width: 90%;
+    margin: 85px auto;
+    padding: 45px;
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
+}
+
+.create-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 34px;
+}
+
+/* ===== FORM GRID ===== */
+.create-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    margin-top: 6px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    outline: none;
+    transition: .2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #8f77ff;
+    box-shadow: 0 0 6px rgba(143, 119, 255, .6);
+}
+
+textarea {
+    height: 115px;
+    resize: none;
+}
+
+/* Description spans full width */
+.form-group:nth-last-child(1) {
+    grid-column: span 2;
+}
+
+/* ===== BUTTON ===== */
+.btn-save {
+    grid-column: span 2;
+    margin-top: 18px;
+    padding: 16px;
+    background: #5a55ff;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-save:hover {
+    background: #433eff;
+    transform: translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 15px;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    margin-top: auto;
+}

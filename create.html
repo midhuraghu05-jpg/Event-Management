@@ -1,0 +1,126 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Evently - Create Event</title>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Correct file name -->
+    <link rel="stylesheet" href="css/create.css">
+</head>
+
+<body class="create-page">
+
+<nav class="topnav">
+    <h2 class="logo">Evently</h2>
+    <div class="links">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a class="active" href="create.html">Create Event</a>
+        <a href="contact.html">Contact</a>
+
+        <!-- ✅ ADDED LOGOUT BUTTON HERE -->
+        <a href="#" id="logoutBtn" style="color: red; font-weight:600;">Logout</a>
+    </div>
+</nav>
+
+<section class="create-container">
+    <h1>Create Event</h1>
+
+    <form id="createForm" class="create-form">
+        <div class="form-group">
+            <label>Event Name</label>
+            <input type="text" id="eventName" required>
+        </div>
+
+        <div class="form-group">
+            <label>Date</label>
+            <input type="date" id="eventDate" required>
+        </div>
+
+        <div class="form-group">
+            <label>Start Time</label>
+            <input type="time" id="eventStart">
+        </div>
+
+        <div class="form-group">
+            <label>End Time</label>
+            <input type="time" id="eventEnd">
+        </div>
+
+        <div class="form-group">
+            <label>Location</label>
+            <input type="text" id="eventLocation" placeholder="Optional">
+        </div>
+
+        <div class="form-group">
+            <label>Description</label>
+            <textarea id="eventDescription" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-save">Save Event</button>
+    </form>
+</section>
+
+<footer>
+    © Evently - Built with ❤️
+</footer>
+
+<script>
+const LOGGED_KEY = 'loggedUser';
+const EVENTS_KEY = 'eventsByUser';
+
+document.getElementById('createForm').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const name = document.getElementById('eventName').value.trim();
+    const date = document.getElementById('eventDate').value;
+    const start = document.getElementById('eventStart').value;
+    const end = document.getElementById('eventEnd').value;
+    const location = document.getElementById('eventLocation').value.trim();
+    const desc = document.getElementById('eventDescription').value.trim();
+
+    if(!name || !date || !desc){
+        alert('Please fill all required fields.');
+        return;
+    }
+
+    const loggedUser = localStorage.getItem(LOGGED_KEY);
+    if(!loggedUser){
+        alert('You are not logged in!');
+        location.href = 'login.html';
+        return;
+    }
+
+    let allEvents = JSON.parse(localStorage.getItem(EVENTS_KEY) || '{}');
+    if(!Array.isArray(allEvents[loggedUser])) {
+        allEvents[loggedUser] = [];
+    }
+
+    const newEvent = { name, date, start, end, location, desc };
+    allEvents[loggedUser].push(newEvent);
+
+    localStorage.setItem(EVENTS_KEY, JSON.stringify(allEvents));
+
+    alert('Event Created Successfully!');
+    this.reset();
+});
+</script>
+
+<!-- ✅ UNIVERSAL LOGOUT SCRIPT -->
+<script>
+document.getElementById("logoutBtn").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    // Clear user login info
+    localStorage.removeItem("loggedUser");
+
+    // Redirect to login/index page
+    window.location.href = "login.html";
+});
+</script>
+
+</body>
+</html>

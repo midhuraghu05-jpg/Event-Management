@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Events — Evently</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/events.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <script src="js/events.js" defer></script>
+  <script src="js/theme.js" defer></script>
+</head>
+
+<body class="events-page">
+
+<header class="topbar">
+  <div class="brand">
+    <a href="index.html" class="brand-link">Evently</a>
+  </div>
+
+  <nav class="main-nav">
+    <a class="nav-link" href="dashboard.html">Dashboard</a>
+    <a class="nav-link active" href="events.html">Events</a>
+    <a class="nav-link" href="create.html">Create</a>
+    <a class="nav-link" href="contact.html">Contact</a>
+  </nav>
+
+  <div class="top-actions">
+    <button id="themeToggle" title="Toggle theme">Theme</button>
+    <a href="login.html" class="nav-link">Logout</a>
+  </div>
+</header>
+
+<main class="content">
+  <h1 class="page-title">All Events</h1>
+  <div id="eventsContainer" class="events-grid"></div>
+</main>
+
+</body>
+</html>

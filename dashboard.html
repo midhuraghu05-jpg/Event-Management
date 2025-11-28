@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard — Evently</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+      <a href="index.html" class="brand-link">Evently</a>
+  </div>
+
+  <nav class="main-nav">
+      <a class="nav-link" href="dashboard.html" style="font-weight:700;color:#5a3df0;">Dashboard</a>
+      <a class="nav-link" href="events.html">Events</a>
+      <a class="nav-link" href="create.html">Create</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+  </nav>
+
+  <div class="top-actions">
+      <span id="welcomeText"></span>
+      <button id="themeToggle" title="Toggle theme">Theme</button>
+      <button id="logoutBtn" class="btn small">Logout</button>
+  </div>
+</header>
+
+<main class="content">
+  <h1>Your Dashboard</h1>
+
+  <section class="stats-section">
+    <div class="stat-card">
+      <h3>Total Events</h3>
+      <p id="totalEvents">0</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Upcoming Events</h3>
+      <p id="upcomingEvents">0</p>
+    </div>
+  </section>
+
+  <section class="table-section">
+    <h2>Recent Events</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Event</th>
+          <th>Date</th>
+          <th>Location</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody id="eventTableBody"></tbody>
+    </table>
+  </section>
+</main>
+
+<script src="js/dashboard.js" defer></script>
+</body>
+</html>
